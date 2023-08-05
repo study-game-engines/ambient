@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ember - Ambient Documentation</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../user/installing.html"><strong aria-hidden="true">1.</strong> Installing</a></li><li class="chapter-item expanded "><a href="../user/setting_up_ide.html"><strong aria-hidden="true">2.</strong> Setting up your IDE</a></li><li class="chapter-item expanded "><a href="../user/overview.html"><strong aria-hidden="true">3.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../user/getting_started.html"><strong aria-hidden="true">4.</strong> Getting started</a></li><li class="chapter-item expanded "><a href="../user/running_examples.html"><strong aria-hidden="true">5.</strong> Running examples</a></li><li class="chapter-item expanded "><a href="../user/api.html"><strong aria-hidden="true">6.</strong> API</a></li><li class="chapter-item expanded "><a href="../user/debugging.html"><strong aria-hidden="true">7.</strong> Debugging</a></li><li class="chapter-item expanded "><a href="../user/profiling.html"><strong aria-hidden="true">8.</strong> Profiling</a></li><li class="chapter-item expanded affix "><li class="part-title">Reference Guide</li><li class="chapter-item expanded "><a href="../reference/getting_content.html"><strong aria-hidden="true">9.</strong> Getting content</a></li><li class="chapter-item expanded "><a href="../reference/runtime.html"><strong aria-hidden="true">10.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="../reference/ember.html" class="active"><strong aria-hidden="true">11.</strong> Ember</a></li><li class="chapter-item expanded "><a href="../reference/ecs.html"><strong aria-hidden="true">12.</strong> ECS</a></li><li class="chapter-item expanded "><a href="../reference/models.html"><strong aria-hidden="true">13.</strong> Models</a></li><li class="chapter-item expanded "><a href="../reference/hierarchies.html"><strong aria-hidden="true">14.</strong> Hierarchies and transforms</a></li><li class="chapter-item expanded "><a href="../reference/asset_pipeline.html"><strong aria-hidden="true">15.</strong> Asset pipeline</a></li><li class="chapter-item expanded "><a href="../reference/networking.html"><strong aria-hidden="true">16.</strong> Networking</a></li><li class="chapter-item expanded "><a href="../reference/animations.html"><strong aria-hidden="true">17.</strong> Animations</a></li><li class="chapter-item expanded "><a href="../reference/audio.html"><strong aria-hidden="true">18.</strong> Audio</a></li><li class="chapter-item expanded "><a href="../reference/ui.html"><strong aria-hidden="true">19.</strong> UI</a></li><li class="chapter-item expanded "><a href="../reference/terminology.html"><strong aria-hidden="true">20.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="../reference/common_pitfalls.html"><strong aria-hidden="true">21.</strong> Common pitfalls</a></li><li class="chapter-item expanded "><a href="../reference/faq.html"><strong aria-hidden="true">22.</strong> FAQ</a></li><li class="chapter-item expanded affix "><li class="part-title">Community</li><li class="chapter-item expanded "><a href="../community/contributing.html"><strong aria-hidden="true">23.</strong> Contributing</a></li><li class="chapter-item expanded "><a href="../community/changelog.html"><strong aria-hidden="true">24.</strong> Changelog</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Ambient Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ember"><a class="header" href="#ember">Ember</a></h1>
+<p>All Ambient embers must have an <code>ambient.toml</code> manifest that describes their functionality. This format is in flux, but is inspired by Rust's <code>Cargo.toml</code>.</p>
+<p>At present, dependencies are <em>not</em> supported, but this will change in future.</p>
+<h2 id="webassembly"><a class="header" href="#webassembly">WebAssembly</a></h2>
+<p>All <code>.wasm</code> components in the <code>build/{client, server}</code> directory will be loaded for the given target, regardless of provenance. The <code>.wasm</code> filenames must be snake-case ASCII identifiers, like the <code>id</code> in the manifest.</p>
+<p>This means any <code>.wasm</code> that implements the Ambient <a href="https://github.com/AmbientRun/Ambient/tree/main/crates/wasm/wit">WIT interface</a> and targets WASI snapshot 2 (or uses an adapter that targets WASI snapshot 2) should run within Ambient.</p>
+<p>As a convenience for Rust users, Ambient will automatically build a <code>Cargo.toml</code> at the root of your ember, if present, as <code>wasm32-wasi</code> for the features specified in <code>build.rust.feature-multibuild</code> in <code>ambient.toml</code> (defaults to <code>client</code> and <code>server</code>).</p>
+<p>The default new ember template will create <code>client.rs</code> and <code>server.rs</code> files, with a <code>Cargo.toml</code> preconfigured with targets for both. The resulting WASM bytecode files are then converted to components and placed in <code>build/{client, server}</code>.</p>
+<p>The process it takes is equivalent to these commands:</p>
+<pre><code class="language-sh">cd your_ember
+cargo build --target wasm32-wasi --features client
+wasm-tools component new target/wasm32-wasi/debug/your_ember_client.wasm -o build/client/your_ember.wasm --adapt wasi_snapshot_preview1.wasm
+cargo build --target wasm32-wasi --features server
+wasm-tools component new target/wasm32-wasi/debug/your_ember_server.wasm -o build/server/your_ember.wasm --adapt wasi_snapshot_preview1.wasm
+</code></pre>
+<p>using <a href="https://github.com/bytecodealliance/wasm-tools">wasm-tools</a> and a bundled version of the <a href="https://github.com/bytecodealliance/preview2-prototyping">preview2-prototyping WASI adapter</a>.</p>
+<h2 id="reference"><a class="header" href="#reference">Reference</a></h2>
+<p><code>Identifier</code>s are snake-case ASCII identifiers (as a string), and <code>IdentifierPath</code>s are a double-colon-separated list of <code>Identifier</code>s. For example, <code>my_ember</code> is an <code>Identifier</code>, and <code>my_ember::my_component</code> is an <code>IdentifierPath</code>.</p>
+<h3 id="ember--ember"><a class="header" href="#ember--ember">Ember / <code>[ember]</code></a></h3>
+<p>The ember section contains metadata about the ember itself, such as its name and version.</p>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>id</code></td><td><code>Identifier</code></td><td><em>Required</em>. The ember's snake-cased ID.</td></tr>
+<tr><td><code>name</code></td><td><code>String</code></td><td><em>Required</em>. A human-readable name for the ember.</td></tr>
+<tr><td><code>description</code></td><td><code>String</code></td><td><em>Required</em>. A human-readable description of the ember.</td></tr>
+<tr><td><code>version</code></td><td><code>String</code></td><td><em>Required</em>. The ember's version, in <code>(major, minor, patch)</code> format. Semantically versioned.</td></tr>
+</tbody></table>
+<h3 id="build--build"><a class="header" href="#build--build">Build / <code>[build]</code></a></h3>
+<p>The build section contains settings related to building the ember.</p>
+<h4 id="rust-settings--buildrust"><a class="header" href="#rust-settings--buildrust">Rust Settings / <code>[build.rust]</code></a></h4>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>feature-multibuild</code></td><td><code>String[]</code></td><td><em>Optional</em>. An array of strings defining the features to be used when building the ember. This is used to build the same code for both client and server.<br /><br />Client and server are built by default (e.g. <code>[&quot;client&quot;, &quot;server&quot;]</code>); this is exposed so that you can disable building one side entirely if required.</td></tr>
+</tbody></table>
+<h3 id="components--components"><a class="header" href="#components--components">Components / <code>[components]</code></a></h3>
+<p>The components section contains custom components defined by the ember. Components are used to store data on entities.</p>
+<p>This is a TOML table, where the keys are the component IDs (<code>IdentifierPath</code>), and the values are the component definitions.</p>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>type</code></td><td><code>ComponentType</code></td><td><em>Required</em>. The type of the component.</td></tr>
+<tr><td><code>name</code></td><td><code>String</code></td><td><em>Required</em>. A human-readable name for the component.</td></tr>
+<tr><td><code>description</code></td><td><code>String</code></td><td><em>Required</em>. A human-readable description of the component.</td></tr>
+<tr><td><code>attributes</code></td><td><code>ComponentAttribute[]</code></td><td><em>Optional</em>. An array of attributes for the component.</td></tr>
+</tbody></table>
+<p>A <code>ComponentType</code> is either:</p>
+<ul>
+<li>
+<p>a string that can be one of the following primitive types:</p>
+<ul>
+<li><code>Bool</code>: a boolean value, true or false</li>
+<li><code>Empty</code>: a component that has no value; most often used for tagging an entity</li>
+<li><code>EntityId</code>: an entity ID</li>
+<li><code>F32</code>: a 32-bit floating point value</li>
+<li><code>F64</code>: a 64-bit floating point value</li>
+<li><code>Mat4</code>: a 4x4 32-bit floating point matrix</li>
+<li><code>Quat</code>: a 32-bit floating point quaternion</li>
+<li><code>String</code>: a UTF-8 string</li>
+<li><code>U8</code>: an 8-bit unsigned integer value</li>
+<li><code>U16</code>: an 16-bit unsigned integer value</li>
+<li><code>U32</code>: a 32-bit unsigned integer value</li>
+<li><code>U64</code>: a 64-bit unsigned integer value</li>
+<li><code>I8</code>: an 8-bit signed integer value</li>
+<li><code>I16</code>: an 16-bit signed integer value</li>
+<li><code>I32</code>: a 32-bit signed integer value</li>
+<li><code>I64</code>: a 64-bit signed integer value</li>
+<li><code>Uvec2</code>: a 2-element 32-bit unsigned integer vector</li>
+<li><code>Uvec3</code>: a 3-element 32-bit unsigned integer vector</li>
+<li><code>Uvec4</code>: a 4-element 32-bit unsigned integer vector</li>
+<li><code>Ivec2</code>: a 2-element 32-bit signed integer vector</li>
+<li><code>Ivec3</code>: a 3-element 32-bit signed integer vector</li>
+<li><code>Ivec4</code>: a 4-element 32-bit signed integer vector</li>
+<li><code>Vec2</code>: a 2-element 32-bit floating point vector</li>
+<li><code>Vec3</code>: a 3-element 32-bit floating point vector</li>
+<li><code>Vec4</code>: a 4-element 32-bit floating point vector</li>
+<li><code>Duration</code>: A time span. Often used as a timestamp, in which case it designates the duration since Jan 1, 1970.</li>
+</ul>
+</li>
+<li>
+<p>a contained type of the form <code>{ type = &quot;Vec&quot;, element_type = ComponentType }</code> or <code>{ type = &quot;Option&quot;, element_type = ComponentType }</code></p>
+<ul>
+<li>Note that <code>Vec</code> and <code>Option</code> are the only supported container types, and <code>element_type</code> must be a primitive <code>ComponentType</code> (that is, you cannot have nested contained types).</li>
+</ul>
+</li>
+</ul>
+<p>A <code>ComponentAttribute</code> is a string that can be one of the following:</p>
+<ul>
+<li><code>Debuggable</code>: this component can have its debug value printed, especially in ECS dumps</li>
+<li><code>Networked</code>: this component is networked</li>
+<li><code>Resource</code>: this component will only ever be used as a resource; will error if attached to an entity</li>
+<li><code>MaybeResource</code>: this component can be used as a resource or as a component; necessary if treating this component as a resource</li>
+<li><code>Store</code>: this component's value should be persisted when the world is saved</li>
+</ul>
+<h3 id="concepts--concepts"><a class="header" href="#concepts--concepts">Concepts / <code>[concepts]</code></a></h3>
+<p>The concepts section contains custom concepts defined by the ember. Concepts are used to define a set of components that can be attached to an entity.</p>
+<p>This is a TOML table, where the keys are the concept IDs (<code>Identifier</code>), and the values are the concept definitions.</p>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>name</code></td><td><code>String</code></td><td><em>Required</em>. A human-readable name for the concept.</td></tr>
+<tr><td><code>description</code></td><td><code>String</code></td><td><em>Required</em>. A human-readable description of the concept.</td></tr>
+<tr><td><code>extends</code></td><td><code>String[]</code></td><td><em>Optional</em>. An array of concepts to extend. Must be defined in this ember manifest.</td></tr>
+<tr><td><code>components</code></td><td><code>Map&lt;IdentifierPath, any&gt;</code></td><td><em>Required</em>. An object containing the components and their default values. Must be components defined in this ember manifest.</td></tr>
+</tbody></table>
+<p>The <code>components</code> is an object where the keys are <code>IdentifierPath</code>s of components defined in the ember manifest (at this time, it must be in the same manifest), and the values are the default values for those components in the concept.</p>
+<h3 id="messages--messages"><a class="header" href="#messages--messages">Messages / <code>[messages]</code></a></h3>
+<p>The messages section contains custom messages defined by the ember. Messages are used to communicate between client and server.</p>
+<p>For an example of how to use messages, see the <a href="https://github.com/AmbientRun/Ambient/tree/main/guest/rust/examples/basics/messaging">messaging example</a>.</p>
+<p>This is a TOML table, where the keys are the message IDs (<code>Identifier</code>), and the values are the message definitions.</p>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>name</code></td><td><code>String</code></td><td><em>Required</em>. A human-readable name for the message.</td></tr>
+<tr><td><code>description</code></td><td><code>String</code></td><td><em>Required</em>. A human-readable description of the message.</td></tr>
+<tr><td><code>fields</code></td><td><code>Map&lt;Identifier, ComponentType&gt;</code></td><td><em>Required</em>. An object containing the fields and their types. Must be one of the types supported for components.</td></tr>
+</tbody></table>
+<h2 id="sample-ambienttoml"><a class="header" href="#sample-ambienttoml">Sample <code>ambient.toml</code></a></h2>
+<p>A sample <code>ambient.toml</code> is shown below:</p>
+<!-- TODO: autogenerate with generate-docs -->
+<pre><code class="language-toml">#
+# The ember section describes all ember metadata.
+#
+[ember]
+# This must be a snake-cased name.
+id = &quot;my_cool_ember&quot;
+# This name is human-readable and can contain anything.
+name = &quot;My Cool Ember&quot;
+# This description is human-readable and can contain anything.
+description = &quot;A sample ember that's the coolest thing ever.&quot;
+# Embers are expected to use (major, minor, patch) semantic versioning.
+# Other formats are not accepted. This requirement may be relaxed later.
+version = &quot;0.0.1&quot;
+
+#
+# Build settings.
+#
+[build]
+# Rust-specific settings.
+[build.rust]
+# `cargo build` will be run with each of these features to produce a separate WASM binary,
+# which is then componentized and copied into a folder of the corresponding name in `build/`.
+# This is used to build the same code for both client and server.
+# Client and server are built by default; this is exposed so that you can disable building one
+# side entirely if required.
+# You will normally not need to touch this.
+feature-multibuild = [&quot;client&quot;, &quot;server&quot;]
+
+#
+# Custom components defined by this ember.
+# Components are used to store data on entities.
+#
+[components]
+# Inline tables can be used.
+cool_component = { type = &quot;I32&quot;, name = &quot;Cool Component&quot;, description = &quot;A cool component&quot;, attributes = [&quot;Debuggable&quot;] }
+# Explicit tables can also be used.
+[components.cool_component2]
+# At time of writing, supported component types are:
+#   Empty, Bool, String,
+#   EntityId,
+#   F32, F64, Mat4, Quat,
+#   U8, U16, U32, U64,
+#   I8, I16, I32, I64,
+#   Vec2, Vec3, Vec4,
+#   Uvec2, Uvec3, Uvec4,
+#   Ivec2, Ivec3, Ivec4
+# or
+#   { type = &quot;Vec&quot;, element_type = &quot;TypeFromAbove&quot; }
+#   { type = &quot;Option&quot;, element_type = &quot;TypeFromAbove&quot; }
+# You cannot nest container types.
+type = &quot;I32&quot;
+name = &quot;Cool Component 2&quot;
+description = &quot;A cool component 2&quot;
+# At time of writing, supported attributes are:
+#   Debuggable: this component can have its debug value printed, especially in ECS dumps
+#   Networked: this component is networked
+#   Resource: this component will only ever be used as a resource; will error if attached to an entity
+#   MaybeResource: this component can be used as a resource or as a component; necessary if treating this component as a resource
+#   Store: this component's value should be persisted when the world is saved
+attributes = [&quot;Debuggable&quot;]
+# Namespaces are also supported:
+&quot;cool::component&quot; = { type = &quot;I32&quot;, name = &quot;Cool Component&quot;, description = &quot;A cool component&quot;, attributes = [&quot;Debuggable&quot;] }
+
+#
+# Custom concepts defined by this ember.
+# Concepts are used to define a set of components that can be attached to an entity.
+#
+[concepts]
+[concepts.concept1]
+# The name of the concept.
+name = &quot;Concept 1&quot;
+# The description of the concept.
+description = &quot;The best&quot;
+[concepts.transformable.components]
+# Each component needs to be specified with a default value.
+# At time of writing, you can only use components defined in this ember manifest.
+cool_component = 0
+
+# A concept that extends `concept1` and has both `cool_component` and `cool_component2`.
+[concepts.concept2]
+name = &quot;Concept 2&quot;
+description = &quot;The successor&quot;
+# At time of writing, all concepts being extended must be defined in this ember manifest.
+extends = [&quot;concept1&quot;]
+[concepts.concept2.components]
+cool_component2 = 1
+
+#
+# Custom messages defined by this ember.
+# Messages are used to communicate between client and server.
+#
+[messages]
+[messages.input]
+# The name of the message.
+name = &quot;Input&quot;
+# The description of the message.
+description = &quot;Describes the input state of the player.&quot;
+[messages.input.fields]
+# Each field in the message must have a type, name and description. The supported types are the same as for components.
+direction = { type = &quot;Vec2&quot;, name = &quot;Direction&quot;, description = &quot;The movement direction of the player.&quot; }
+mouse_delta_x = { type = &quot;F32&quot;, name = &quot;Mouse delta X&quot;, description = &quot;The mouse delta X.&quot; }
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../reference/runtime.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../reference/ecs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../reference/runtime.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../reference/ecs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
